@@ -1,11 +1,13 @@
 import Layout from "../components/Layout";
 
-export default function Home() {
+const Blog = () => {
   return (
     <Layout
-      pagina='Inicio'
+     pagina='Blog'
     >
-      <h1>Desde inicio</h1>
+      <h1>Desde blog</h1>
     </Layout>
   );
-}
+};
+
+export default Blog;
