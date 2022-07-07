@@ -1,6 +1,8 @@
 // import { useEffect } from "react";
 import Layout from "../components/Layout";
 import Entrada from "../components/Entrada";
+import styles from '../styles/Blog.module.css'
+
 const Blog = ({data}) => {
   // no consumiremos la api de esta forma, sino como se indica abajo
   // useEffect(() => {
@@ -27,7 +29,7 @@ const Blog = ({data}) => {
     >
       <main className="contenedor">
         <h2 className="heading">Blog</h2>
-        <div>
+        <div className={styles.blog}>
           {data.map(entrada => (
             <Entrada
               key={entrada.id}
