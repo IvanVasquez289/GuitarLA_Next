@@ -6,13 +6,30 @@ const EntradaBlog = ({data}) => {
   console.log(data)
   return (
     <div>
-        {data.titulo}
+      desde entrada blog
     </div>
   )
 }
 
-export async function getServerSideProps({query: {id} }){
-  // estos console.log solo los podemos ver en la terminal de next
+export async function getStaticPaths(){
+  const url = 'http://localhost:1337/blogs'
+  const respuesta = await fetch(url)
+  const entradas = await respuesta.json()
+
+  const paths = entradas.map(entrada =>({
+    params: {id: entrada.id}
+  }))
+
+  console.log(paths)
+
+  return{
+    paths,
+    fallback:true
+  }
+}
+
+export async function getStaticProps({params: {id} }){
+  
   const url = `http://localhost:1337/blogs/${id}`
   const respuesta = await fetch(url)
   const data = await respuesta.json()
@@ -24,5 +41,19 @@ export async function getServerSideProps({query: {id} }){
     }
   }
 }
+
+// export async function getServerSideProps({query: {id} }){
+//   // estos console.log solo los podemos ver en la terminal de next
+//   const url = `http://localhost:1337/blogs/${id}`
+//   const respuesta = await fetch(url)
+//   const data = await respuesta.json()
+//   // console.log(data)
+
+//   return{
+//     props: {
+//       data
+//     }
+//   }
+// }
 
 export default EntradaBlog
