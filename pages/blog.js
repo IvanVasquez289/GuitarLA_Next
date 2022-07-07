@@ -1,6 +1,6 @@
 // import { useEffect } from "react";
 import Layout from "../components/Layout";
-
+import Entrada from "../components/Entrada";
 const Blog = ({data}) => {
   // no consumiremos la api de esta forma, sino como se indica abajo
   // useEffect(() => {
@@ -19,13 +19,23 @@ const Blog = ({data}) => {
   //   consultarApi()
   // }, [])
   
-  console.log(data)
+  // console.log(data)
 
   return (
     <Layout
      pagina='Blog'
     >
-      <h1>Desde blog</h1>
+      <main className="contenedor">
+        <h2 className="heading">Blog</h2>
+        <div>
+          {data.map(entrada => (
+            <Entrada
+              key={entrada.id}
+              entrada = {entrada}
+            />
+          ))}
+        </div>
+      </main>
     </Layout>
   );
 };
