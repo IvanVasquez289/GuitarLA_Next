@@ -22,10 +22,11 @@ const Blog = ({data}) => {
   // }, [])
   
   // console.log(data)
-
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/blogs`
+  console.log(url)
   return (
     <Layout
-     pagina='Blog'
+     pagina='GuitarLA - Blog'
     >
       <main className="contenedor">
         <h2 className="heading">Blog</h2>
@@ -44,7 +45,8 @@ const Blog = ({data}) => {
 
 export async function getServerSideProps(){
 
-  const url = 'http://localhost:1337/blogs'
+  const url = `${process.env.API_URL}/blogs`
+  console.log(url)
   const respuesta = await fetch(url)
   const data = await respuesta.json()
 

@@ -4,7 +4,7 @@ import styles from '../styles/Nosotros.module.css'
 const Nosotros = () => {
   return (
     <Layout
-     pagina='Nosotros'
+     pagina='GuitarLA - Nosotros'
     >
       <main className="contenedor">
         <h2 className="heading">Nosotros</h2>

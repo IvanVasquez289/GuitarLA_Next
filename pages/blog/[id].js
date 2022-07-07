@@ -12,7 +12,7 @@ const EntradaBlog = ({data}) => {
 }
 
 export async function getStaticPaths(){
-  const url = 'http://localhost:1337/blogs'
+  const url = `${process.env.API_URL}/blogs`
   const respuesta = await fetch(url)
   const entradas = await respuesta.json()
 
@@ -30,7 +30,7 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params: {id} }){
   
-  const url = `http://localhost:1337/blogs/${id}`
+  const url = `${process.env.API_URL}/blogs/${id}`
   const respuesta = await fetch(url)
   const data = await respuesta.json()
   // console.log(data)
@@ -44,7 +44,8 @@ export async function getStaticProps({params: {id} }){
 
 // export async function getServerSideProps({query: {id} }){
 //   // estos console.log solo los podemos ver en la terminal de next
-//   const url = `http://localhost:1337/blogs/${id}`
+//   const url = `http://localhost:1337/blogs/${id}` este ya no nos servira
+//   const url = `${process.env.API_URL}/blogs/${id}`
 //   const respuesta = await fetch(url)
 //   const data = await respuesta.json()
 //   // console.log(data)
