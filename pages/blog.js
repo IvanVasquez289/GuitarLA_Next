@@ -22,8 +22,7 @@ const Blog = ({data}) => {
   // }, [])
   
   // console.log(data)
-  const url = `${process.env.NEXT_PUBLIC_API_URL}/blogs`
-  console.log(url)
+
   return (
     <Layout
      pagina='GuitarLA - Blog'
@@ -43,7 +42,7 @@ const Blog = ({data}) => {
   );
 };
 
-export async function getServerSideProps(){
+export async function getStaticProps(){
 
   const url = `${process.env.API_URL}/blogs`
   console.log(url)

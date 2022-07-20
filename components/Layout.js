@@ -5,7 +5,7 @@ const Layout = ({children, pagina}) => {
   return (
     <div>
         <Head>
-            <title>{pagina} </title>
+            <title>{pagina}</title>
             <meta name="description" content="Sitio web de venta de guitarras"/>
         </Head>
         <Header/>
