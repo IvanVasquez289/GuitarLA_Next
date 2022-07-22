@@ -15,17 +15,11 @@ const Curso = ({curso}) => {
 
         <style jsx>{`
             section{
-                background-color: blue;
-            }
-            
-            @media (min-width:992px){
-                section{
-                    padding: 10rem 0;
-                    margin-top: 10rem;
-                    background-image: linear-gradient(to right, rgb(0 0 0 / 0.65), rgb(0 0 0 / 0.7)), url(${imagen.url}) ;
-                    background-size:cover ;
-                    background-position: 50% ;
-                }
+                padding: 10rem 0;
+                margin-top: 10rem;
+                background-image: linear-gradient(to right, rgb(0 0 0 / 0.65), rgb(0 0 0 / 0.7)), url(${imagen.url}) ;
+                background-size:cover ;
+                background-position: 50% ;
             }
         `}
 
