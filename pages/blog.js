@@ -1,9 +1,8 @@
 // import { useEffect } from "react";
 import Layout from "../components/Layout";
-import Entrada from "../components/Entrada";
-import styles from '../styles/Blog.module.css'
+import ListadoBlog from "../components/ListadoBlog";
 
-const Blog = ({data}) => {
+const Blog = ({entradas}) => {
   // no consumiremos la api de esta forma, sino como se indica abajo
   // useEffect(() => {
   //   const consultarApi = async ()=>{
@@ -28,15 +27,9 @@ const Blog = ({data}) => {
      pagina='GuitarLA - Blog'
     >
       <main className="contenedor">
-        <h2 className="heading">Blog</h2>
-        <div className={styles.blog}>
-          {data.map(entrada => (
-            <Entrada
-              key={entrada.id}
-              entrada = {entrada}
-            />
-          ))}
-        </div>
+        <ListadoBlog
+          entradas={entradas}
+        />
       </main>
     </Layout>
   );
@@ -47,13 +40,13 @@ export async function getStaticProps(){
   const url = `${process.env.API_URL}/blogs?_sort=createdAt:desc`
   console.log(url)
   const respuesta = await fetch(url)
-  const data = await respuesta.json()
+  const entradas = await respuesta.json()
 
-  console.log(data)
+  console.log(entradas)
 
   return{
     props: {
-      data
+      entradas
     }
   }
 }
