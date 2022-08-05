@@ -10,7 +10,7 @@ const EntradaBlog = ({data}) => {
   // if(data == null){
   //   return(<NoEncontrado/>)
   // }
-  console.log(data)
+  // console.log(data)
   // const {contenido,titulo,imagen, published_at} = data
   return (
     <>
