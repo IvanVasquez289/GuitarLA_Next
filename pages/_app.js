@@ -43,11 +43,18 @@ function MyApp({ Component, pageProps }) {
     setCarrito(carritoActualizado);
   };
 
+
+  const deleteProducto = (id) => {
+    const carritoActualizado = carrito.filter( articulo => articulo.id !== id)
+    setCarrito(carritoActualizado);
+  }
+
   return (
     <Component {...pageProps} 
       carrito={carrito} 
       isNewProduct={isNewProduct} 
       updateCantidad = {updateCantidad}
+      deleteProducto = {deleteProducto}
     />
   );
 }
