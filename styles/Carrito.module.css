@@ -7,6 +7,7 @@
 @media (min-width:768px) {
     .contenido{
         grid-template-columns: 3fr 2fr;
+        align-items: flex-start;
     }
 }
 
@@ -80,4 +81,10 @@
     right: 1rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+.resumen{
+    background-color: #f9fafb;
+    padding: 3rem;
+    border-radius: 1rem;
 }
